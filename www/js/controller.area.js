@@ -4,10 +4,9 @@ angular.module('starter.controllers')
     '$stateParams',
     'factory.api',
 function($rootScope, $stateParams, API) {
-console.log('AREA controller: ', this);
+    // console.log('AREA controller is running');
 var area = this;
 area.active = {};
-
 area.init = function() {
         console.log('controller.area.initiliazing', $stateParams);
         console.log('$stateParams.id: ',$stateParams.areaId);
