@@ -1,0 +1,16 @@
+<ion-view view-title="Scopes" ng-init="scopes.init()">
+  <ion-content>
+    <ion-list>
+     <a href="#/app/areas/{{scopes.jobId}}" ng-click="scopes.setActiveScope($index)" ng-repeat="scope in scopes.data track by $index">
+        <ion-item class="item">
+        {{scope.name}}
+        </ion-item>
+    </a>
+    </ion-list>
+  </ion-content>
+  <a href="#/app/scopes/{{scopes.jobId}}">
+    <div class="bar bar-footer bar-assertive" >
+       <h1 class="title">New Scope</h1>
+    </div>
+  </a>
+</ion-view>

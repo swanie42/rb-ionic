@@ -1,0 +1,25 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">New Area</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeNewArea()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="createNewArea()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Area Name</span>
+          <input type="text" ng-model="area.name">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Square feet</span>
+          <input type="number" ng-model="area.sqft">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Submit</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

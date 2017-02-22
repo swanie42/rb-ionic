@@ -1,0 +1,11 @@
+<ion-view view-title="Jobs" ng-init="jobs.init()">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item item-thumbnail-left" ng-repeat="job in jobs.data track by $index" ng-click="jobs.setActiveJob($index)" href="#/app/jobs/{{job._id}}">
+        {{job.name}}
+
+            <img src={{job.img}}>
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

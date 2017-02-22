@@ -1,0 +1,57 @@
+<ion-view view-title="{{job.active.name}}" ng-init="job.init()">
+  <ion-content>
+      <div class="button-bar button-outline button-positive">
+        <a class="button button button-outline button-positive active">Details</a>
+        <a class="button button button-outline button-positive">Maps</a>
+        <a class="button button button-outline button-positive">Feed</a>
+      </div>
+      <div class="card">
+        <div class="item item-divider">
+        Job Name
+        </div>
+        <div class="item item-text-wrap">
+        {{job.active.name}}
+        </div>
+      </div>
+      <div class="card">
+        <div class="item item-divider">
+        Contact Info
+        </div>
+        <div class="item item-text-wrap">
+        {{job.active.contact}}
+        </div>
+        <div class="item item-text-wrap">
+        {{job.active.phone}}
+        </div>
+        <div class="item item-text-wrap" placeholder="email">
+        {{job.active.email}} Email
+        </div>
+      </div>
+      <div class="card">
+        <div class="item item-divider">
+        Job Address
+        </div>
+        <div class="item item-text-wrap">
+        {{job.active.address}}
+        </div>
+        <div class="item item-text-wrap">
+        {{job.active.city}}, {{job.active.state}}
+        </div>
+      </div>
+      <div class="card">
+        <div class="item item-divider">
+        Description
+        </div>
+        <div class="item item-text-wrap">
+        {{job.active.description}}
+        </div>
+      </div>
+
+  </ion-content>
+        <a href="#/app/scopes/{{job.active._id}}">
+          <div class="bar bar-footer bar-assertive" >
+             <h1 class="title">Scope</h1>
+          </div>
+        </a>
+  </div>
+</ion-view>

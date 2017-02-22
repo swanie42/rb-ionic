@@ -1,0 +1,14 @@
+<ion-view view-title="Areas" ng-init="areas.init()">
+  <ion-content>
+    <ion-list>
+        <a ng-click="areas.setActiveArea($index)" href="#/app/area/{{area._id}}" ng-repeat="area in areas.data track by $index">
+            <ion-item class="item">
+                {{area.name}}
+            </ion-item>
+        </a>
+    </ion-list>
+  </ion-content>
+    <div class="bar bar-footer bar-assertive" ng-click="openCreateNewArea()">
+       <h1 class="title">New Area</h1>
+    </div>
+</ion-view>
