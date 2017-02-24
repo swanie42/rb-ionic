@@ -1,35 +1,27 @@
-<ion-view view-title="Browse">
-  <ion-content>
-      <ion-list>
+<ion-view cache-view="false" view-title="Camera Plus">
+  <ion-content class="fullHeight">
 
-        <ion-item class="item-text-wrap slack-item-welcome">
-          <div class="whiter">
-            <div class="float">
-              <h2>Welcome!</h2>
-              <p>This is the very beginning of the <strong>#ert</strong> channel, which you created on May 26, 2016.</p>
-            </div>
-          </div>
-        </ion-item>
-
-        <ion-item ng-repeat="message in messages" class="slack-item-message">
-            <img src="{{message.avatar}}" alt="avatar">
-            <h2>{{message.user}} <span>{{message.date}}</span></h2>
-            <p>{{message.text}}</p>
-        </ion-item>
-
-      </ion-list>
-  </ion-content>
-  <div keyboard-attach class="bar bar-footer bar-stable item-input-inset slack-menssage-bar">
-    <i style="padding-left:15px;padding-right:20px" class="icon ion-android-locate"></i>
-    <i style="padding-right:20px" class="icon ion-android-camera"></i>
-    <i style="padding-right:20px" class="icon ion-ios-information"></i>
-
-    <label class="item-input-wrapper">
-      <input type="text" placeholder="Message"ng-focus="ajustarScroll()" ng-blur="ajustarScroll()" ng-model="message.text">
-    </label>
-    <div ng-class="{ocultar:!message.text}" ng-click="sendMessage(message)" class="button button-clear button-positive">
-      Send
+    <div class="centerDiv padding">
+      <button class="button halfWidth margin-2 icon-left ion-camera button-positive" ng-click="takePhoto('Camera')">Take Photo</button>
+      <button class="button halfWidth margin-2 icon-left ion-image button-calm" ng-click="takePhoto('Library')">From Library</button>
     </div>
 
+  <!-- ZOOM 0.1 IS USED HERE TO DISPLAY THE ENTIRE CAMERA IMAGE WITHOUT RESCALING THE ORIGINAL IMG -->
+  <!-- IF YOU WANT TO RUN ANY FILTERS WITH JAVASCRIPT YOU WILL HAVE TO CROP THE IMAGE TO SOMETHING
+  SMALLER BECAUSE PERFORMANCE ISSUES WITH LARGE IMAGE FILES WHEN USING JAVASCRIPT -->
+    <div id="canvasContainer" class="centerDiv containerDiv">
+        <canvas id="myCanvas" style="zoom: 0.1;"></canvas>
+    </div>
+
+  <div class="centerDiv padding">
+   <button class="button margin-2 icon-left ion-ios-arrow-thin-left" ng-click="rotateImage(-90)">Rotate L</button>
+   <button class="button margin-2 icon-right ion-ios-arrow-thin-right" ng-click="rotateImage(90)">Rotate R</button>
   </div>
+
+   <div class="centerDiv">
+      <button class="button fullWidth icon-left ion-share button-positive" ng-click="sharePhoto()">Share Photo</button>
+    </div>
+
+  </ion-content>
+
 </ion-view>

@@ -71,7 +71,8 @@ angular.module('starter.controllers')
                     area:'areas',
                     activity:'activities',
                     image:'images',
-                    note:'notes'
+                    note:'notes',
+                    feed:'feeds'
                 },
 
                 enums: {

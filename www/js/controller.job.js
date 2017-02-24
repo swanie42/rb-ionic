@@ -28,6 +28,11 @@ job.init = function() {
         },
         error: API.debug.error
     };
-    
+
 
 }])
+
+// job.clicked = function(num) {
+//     console.log('Clicked is clicked')
+//     job.var = num;
+// }

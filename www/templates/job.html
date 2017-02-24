@@ -1,16 +1,23 @@
 <ion-view view-title="{{job.active.name}}" ng-init="job.init()">
-  <ion-content>
-      <div class="button-bar button-outline button-positive">
-        <a class="button button button-outline button-positive active">Details</a>
-        <a class="button button button-outline button-positive">Maps</a>
-        <a class="button button button-outline button-positive">Feed</a>
-      </div>
+    <div class="button-bar button-outline button-positive" style="margin-top:45px;">
+      <a class="button button button-outline button-positive" ng-click="job.clicked(1)" ng-class="{'active': var == 1}">FNOL</a>
+      <a class="button button button-outline button-positive" ng-click="job.clicked(2)" ng-class="{'active': var == 2}">Maps</a>
+      <a class="button button button-outline button-positive" ng-click="job.clicked(3)" ng-class="{'active': var == 3}">Feed</a>
+    </div>
+  <ion-content style="margin-top: 50px; margin-bottom: 45px" ng-class="{'active': var == 1}">
+
       <div class="card">
         <div class="item item-divider">
         Job Name
         </div>
         <div class="item item-text-wrap">
         {{job.active.name}}
+        </div>
+        <div class="item item-text-wrap">
+        {{job.active.sqft}} sqft
+        </div>
+        <div class="item item-text-wrap">
+        {{job.active.lossType}}
         </div>
       </div>
       <div class="card">
@@ -44,6 +51,17 @@
         </div>
         <div class="item item-text-wrap">
         {{job.active.description}}
+        </div>
+      </div>
+      <div class="card">
+        <div class="item item-divider">
+        Local Servpro
+        </div>
+        <div class="item item-text-wrap">
+        {{job.active.localServpro}}
+        </div>
+        <div class="item item-text-wrap">
+        {{job.active.localServproInvolv}}
         </div>
       </div>
 

@@ -47,7 +47,8 @@ $stateProvider
       url: '/browse',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/browse.html',
+          controller: 'CameraCtrl'
         }
       }
     })
@@ -85,7 +86,11 @@ $stateProvider
       'menuContent': {
         templateUrl: 'templates/areas.html',
         controller: 'AreasCtrl as areas'
-      }
+      },
+    //   'modal': {
+    //     templateUrl: 'create-area.html'
+    //     controller: 'AreasCreateCtrl as areasCreate'
+    //   }
     }
   })
   .state('app.area', {
@@ -96,7 +101,35 @@ $stateProvider
         controller: 'AreaCtrl as area'
       }
     }
-  });
+  })
+  // setup an abstract state for the tabs directive
+      .state('tab', {
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'templates/tabs.html'
+    })
+
+    // Each tab has its own nav history stack:
+
+    .state('tab.dash', {
+      url: '/dash',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/tab-dash.html',
+          controller: 'DashCtrl'
+        }
+      }
+    })
+
+    .state('tab.camera', {
+      url: '/camera',
+      views: {
+        'tab-camera': {
+          templateUrl: 'templates/tab-camera.html',
+          controller: 'CameraCtrl'
+        }
+      }
+    });;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/jobs');
 });

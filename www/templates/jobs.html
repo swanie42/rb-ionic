@@ -1,11 +1,25 @@
 <ion-view view-title="Jobs" ng-init="jobs.init()">
   <ion-content>
     <ion-list>
-      <ion-item class="item item-thumbnail-left" ng-repeat="job in jobs.data track by $index" ng-click="jobs.setActiveJob($index)" href="#/app/jobs/{{job._id}}">
+        <a class="item item-thumbnail-left" ng-repeat="job in jobs.data track by $index" ng-click="jobs.setActiveJob($index)" href="#/app/jobs/{{job._id}}">
+          <img src={{job.img}}>
+    <span class="item-note">
+        {{job.pm}}
+       </span>
+          <h2>{{job.name}}</h2>
+          <p>{{job.city}}, {{job.state}} </p>
+          <p>{{job.sqft}} sqft | {{job.lossType}} </p>
+
+
+        </a>
+      <!-- <ion-item class="item item-thumbnail-left" ng-repeat="job in jobs.data track by $index" ng-click="jobs.setActiveJob($index)" href="#/app/jobs/{{job._id}}">
         {{job.name}}
 
             <img src={{job.img}}>
-        </ion-item>
+            <span class="item-note">
+                 {{job.lossType}}
+               </span>
+        </ion-item> -->
     </ion-list>
   </ion-content>
 </ion-view>
